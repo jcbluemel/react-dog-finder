@@ -26,7 +26,18 @@ function App() {
     // console.log("getdogs?")
     // TODO: Make an axios Call
     // Update The State with Axios Call
-    setDogs(d => 42);
+    setDogs(d => {
+      return  [{
+      "name": "Whiskey",
+      "age": 5,
+      "src": "whiskey",
+      "facts": [
+        "Whiskey loves eating popcorn.",
+        "Whiskey is a terrible guard dog.",
+        "Whiskey wants to cuddle with you!"
+      ]
+    }]}
+    );
   }
 
   if (!dogs) getDogs();
@@ -60,7 +71,6 @@ export default App;
  * -State: [List of Dogs] emprty to start
  * -Props: None
  * -Axios Call
- * -TODO:Import Navigate
  *
  * TODO: Update the breadcrumb
  * App -> {NavBar | Routes -> (DogList | DogDetails) }

@@ -10,9 +10,18 @@ import { Link } from "react-router-dom";
  */
 
 function NavBar({ dogs }) {
+  console.log("NavBar", dogs);
   return (
-    //TODO: NavBar -><link to="/dogs"> + listOfDogs.map(dog => link to="/dog.name")
+    <nav>
+    {/* TODO: Remove NavBar Header*/}
     <header>NavBar!</header>
+      <Link to="/dogs">
+          All Dogs!
+      </Link>
+      {dogs.map(
+        dog => <Link to={`/${dog.src}`}> {`${dog.name}`} </Link>)
+      }
+    </nav>
   );
 }
 
