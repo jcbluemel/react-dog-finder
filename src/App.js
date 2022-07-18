@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import { React, useState } from 'react';
 import axios from 'axios';
 
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
@@ -16,23 +16,36 @@ import './App.css';
  * - dogs: possible array of [ { dog }, ... ]
  *
  * App -> { NavBar, Routes }
- * TODO: Potentially update breadcrumbs
  */
+
 function App() {
+  const [dogs, setDogs] = useState(false);
+  // console.log("DOGS", dogs);
 
-  // TODO: Define State as an empty array
+  async function getDogs() {
+    // console.log("getdogs?")
+    // TODO: Make an axios Call
+    // Update The State with Axios Call
+    setDogs(d => 42);
+  }
 
-
-  // TODO: CRRAZY JOEL INSPIRED FUNCTION CALL IN RETURN!?!?!
-  // if the state of the array is empty {
-      // Make an axios Call
-      // Update The State with Axios Call
-  // }
+  if (!dogs) getDogs();
 
   return (
     <div className="App">
       {/* TODO: */}
       <h1>Good luck!</h1>
+      {dogs
+        ? <BrowserRouter>
+            <NavBar dogs={dogs} />
+            <Routes>
+              <Route element={<DogList dogs={dogs} />} path="/dogs" />
+              <Route element={<DogDetails dogs={dogs}/>} path="/dogs/:name" />
+              <Route element={<Navigate to="/dogs" />} path="*" />
+            </Routes>
+          </BrowserRouter>
+        : "Loading Dogs..."
+      }
     </div>
   );
 }

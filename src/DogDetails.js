@@ -3,15 +3,16 @@ import React from "react";
 /** Show individual dog details.
  *
  *  Props:
- *  - dog: details about dog
+ *  - dogs: array of all dogs
  *
  * //FIXME: check hierarchy
  * { DogList, Route } -> DogDetails
  */
 
-function DogDetails({ dog }) {
+function DogDetails({ dogs }) {
+  //TODO: grab name of dog from params, filter dogs to get single dog
+  //  display the dog
   return (
-    //TODO: * listOfDogs.map(dog => <html> <things containing info={dog}> <LINK to="/dogname"> </html>)
     <header>DogDetails!</header>
   );
 }
