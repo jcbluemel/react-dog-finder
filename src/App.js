@@ -13,9 +13,9 @@ import './App.css';
 /** App for managing a dogs list.
  *
  * State:
- * - listOfDogs: possible array of [ {dogInfo}, ... ]
+ * - dogs: possible array of [ { dog }, ... ]
  *
- * App -> {NavBar | Routes}
+ * App -> { NavBar, Routes }
  * TODO: Potentially update breadcrumbs
  */
 function App() {

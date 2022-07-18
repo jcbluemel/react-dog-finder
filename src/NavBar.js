@@ -3,16 +3,17 @@ import { Link } from "react-router-dom";
 
 /** Component NavBar for listing the homepage and all possible dogs.
  *
- * Props:
- * -listOfDogs: like [{dogDetails},...]
+ *  Props:
+ *  - dogs: like [ { dog }, ... ]
  *
- * App -> NavBar -> Link(s)
+ *  App -> NavBar -> Link(s)
  */
-function NavBar({listOfDogs}){
+
+function NavBar({ dogs }) {
   return (
     //TODO: NavBar -><link to="/dogs"> + listOfDogs.map(dog => link to="/dog.name")
     <header>NavBar!</header>
-  )
+  );
 }
 
 
