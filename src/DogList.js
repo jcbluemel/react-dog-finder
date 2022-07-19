@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import "../public";
 
+// Dog photos import
+// Import the photos As the same variable name === src attribute of the dog obj
+// import whiskey from '/whiskey.jpg';
+
+// const DOGPHOTOS = {whiskey}
+
 /** Display list of all dogs with links to each.
  *
  *  Props:
@@ -12,14 +18,12 @@ import { Link } from "react-router-dom";
 
 function DogList({ dogs }) {
 
-  const img = `../public/{dog.name}.jpg`
-
   function showDog(dog) {
     return (
       <div key={dog.name} className="DogList-dog">
         <Link to={`/dogs/${dog.src}`}>{dog.name}</Link>
-        <h6>{dog.age}</h6>
-        <img src={img} alt="doggo"/>
+        {/* <h6>{dog.age}</h6> */}
+        <img src={`/${dog.src}.jpg`} alt="doggo"/>
       </div>
     )
   }

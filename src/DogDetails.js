@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
+
 /** Show individual dog details.
  *
  *  Props:
@@ -27,6 +28,7 @@ function DogDetails({ dogs }) {
       <p>{dog.name}</p>
       <p>{dog.age}</p>
       {dog.facts.map((fact, idx) => <p key={idx}>{fact}</p>)}
+      <img src={`/${dog.src}.jpg`} alt="Dog"/>
     </div>
   );
 }
