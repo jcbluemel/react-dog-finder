@@ -9,6 +9,7 @@ import DogDetails from './DogDetails';
 
 import './App.css';
 
+const API_URL = "http://localhost:5001/dogs";
 
 /** App for managing a dogs list.
  *
@@ -23,29 +24,15 @@ function App() {
   // console.log("DOGS", dogs);
 
   async function getDogs() {
-    // console.log("getdogs?")
-    // TODO: Make an axios Call
-    // Update The State with Axios Call
-    setDogs(d => {
-      return  [{
-      "name": "Whiskey",
-      "age": 5,
-      "src": "whiskey",
-      "facts": [
-        "Whiskey loves eating popcorn.",
-        "Whiskey is a terrible guard dog.",
-        "Whiskey wants to cuddle with you!"
-      ]
-    }]}
-    );
+    const allDogs = await axios({url: API_URL})
+    setDogs(ds => allDogs.data);
   }
 
   if (!dogs) getDogs();
 
   return (
     <div className="App">
-      {/* TODO: */}
-      <h1>Good luck!</h1>
+      <h1>Dog House!</h1>
       {dogs
         ? <BrowserRouter>
             <NavBar dogs={dogs} />
