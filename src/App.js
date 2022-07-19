@@ -24,7 +24,7 @@ function App() {
   // console.log("DOGS", dogs);
 
   async function getDogs() {
-    const allDogs = await axios({url: API_URL})
+    const allDogs = await axios({ url: API_URL });
     setDogs(ds => allDogs.data);
   }
 
@@ -35,13 +35,13 @@ function App() {
       <h1>Dog House!</h1>
       {dogs
         ? <BrowserRouter>
-            <NavBar dogs={dogs} />
-            <Routes>
-              <Route element={<DogList dogs={dogs} />} path="/dogs" />
-              <Route element={<DogDetails dogs={dogs}/>} path="/dogs/:name" />
-              <Route element={<Navigate to="/dogs" />} path="*" />
-            </Routes>
-          </BrowserRouter>
+          <NavBar dogs={dogs} />
+          <Routes>
+            <Route element={<DogList dogs={dogs} />} path="/dogs" />
+            <Route element={<DogDetails dogs={dogs} />} path="/dogs/:name" />
+            <Route element={<Navigate to="/dogs" />} path="*" />
+          </Routes>
+        </BrowserRouter>
         : "Loading Dogs..."
       }
     </div>

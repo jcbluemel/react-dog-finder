@@ -11,28 +11,15 @@ import { useParams } from "react-router-dom";
  */
 
 function DogDetails({ dogs }) {
-  console.log("DogDetails",dogs);
-  //TODO: grab name of dog from params, filter dogs to get single dog
-  //  display the dog
-  const { name } = useParams();
+  // console.log("DogDetails",dogs);
 
-  const dog = _getDog();
-  console.log('dog',dog);
-
-
-
-  // Make an _function that is only called from within DogDetails
-  // The function Grabs the dog object with the same name key
-
-  /**Function _getDog() takes no parameters.
-   * Returns the first object of dog details from the dogs array,
-   * where the src key matches the URL parameter.
-   * ex: /dogs/whiskey -> {name:..., src: whiskey}
-   */
   function _getDog(){
-    console.log('name',name);
+    // console.log('name',name);
     return dogs.filter(dog => dog.src === name)[0];
   }
+
+  const { name } = useParams();
+  const dog = _getDog();
 
   return (
     <div>

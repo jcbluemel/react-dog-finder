@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
  */
 
 function NavBar({ dogs }) {
-  console.log("NavBar", dogs);
+  // console.log("NavBar", dogs);
   return (
     <nav>
     {/* TODO: Remove NavBar Header*/}
