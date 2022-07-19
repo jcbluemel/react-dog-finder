@@ -39,7 +39,7 @@ function DogDetails({ dogs }) {
       <header>DogDetails!</header>
       <p>{dog.name}</p>
       <p>{dog.age}</p>
-      {dog.facts.map(fact => <p>{fact}</p>)}
+      {dog.facts.map((fact, idx) => <p key={idx}>{fact}</p>)}
     </div>
   );
 }

@@ -19,7 +19,7 @@ function NavBar({ dogs }) {
           All Dogs!
       </Link>
       {dogs.map(
-        dog => <Link to={`/dogs/${dog.src}`}> {`${dog.name}`} </Link>)
+        (dog, idx) => <Link key={idx} to={`/dogs/${dog.src}`}> {`${dog.name}`} </Link>)
       }
     </nav>
   );
